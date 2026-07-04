@@ -21,9 +21,27 @@ netlify.toml          Netlify config (publish root, security headers)
 2. **Connect Netlify:** [app.netlify.com](https://app.netlify.com) → Add new site →
    Import an existing project → pick the `driftwood-site` repo. Build command: none.
    Publish directory: `.` (netlify.toml already says so). Deploy.
-3. **Custom domain:** Netlify → Domain settings → Add `driftwoodapps.com`
-   (buy at any registrar; Netlify walks through the DNS records and provisions HTTPS).
+3. **Custom domain:** Netlify → Domain management → Add a domain you already own →
+   `driftwoodapps.com`. Then add DNS records at the registrar (see gotchas below).
 4. Every future `git push` redeploys automatically.
+
+## DNS gotchas (learned the hard way on Porkbun — live config)
+
+The site is served from Netlify; DNS stays at Porkbun so email forwarding keeps working.
+
+- **Records at Porkbun (external DNS — do NOT switch nameservers to Netlify, it breaks email):**
+  - `A` @ root → `75.2.60.5` (Netlify)
+  - `CNAME` @ `www` → `sensational-cassata-ebac4e.netlify.app`
+  - Leave MX records alone (they carry `hello@`/`rob@` forwarding to Gmail).
+- **Kill Porkbun's default URL forwarding first.** New Porkbun domains ship with URL
+  forwarding ON, redirecting the bare domain to a Link-in-Bio parking page. It synthesizes
+  the root A record and **overrides** the one you add. It is NOT shown in the DNS Records
+  list — remove it via Account → Domain Management → domain "Details" → URL Forwarding →
+  trash the entry. Removing it also clears the root A record, so re-add `A → 75.2.60.5` after.
+- **Porkbun DNS is Cloudflare-backed** → root A took ~18 min to propagate even at the
+  authoritative nameserver. Be patient; poll `dig @fortaleza.ns.porkbun.com driftwoodapps.com A`.
+- Full details + verification commands: see the "Distribution & Website" note in the
+  project's Obsidian vault.
 
 ## Before launch — replace the placeholders
 
