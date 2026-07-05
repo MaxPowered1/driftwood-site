@@ -42,8 +42,7 @@
     <p class="sub">DriveTwin keeps a full two-way copy of your drive in iCloud —
        every file safe in the cloud, and almost none of it taking up space on your Mac.</p>
     <div class="cta-row">
-      <!-- TODO: replace # with your Gumroad / Lemon Squeezy product link -->
-      <a class="btn btn-primary" href="#pricing">Buy DriveTwin — $14.99<span class="note">One-time purchase · macOS 15+</span></a>
+      <a class="btn btn-primary" href="#pricing">Get notified at launch<span class="note">$14.99 one-time · macOS 15+ · pay nothing today</span></a>
       <a class="btn btn-secondary" href="#how">See how it works</a>
     </div>
     <img class="shot-img hero-shot" src="/screenshots/drivetwin-setup.png"
@@ -173,9 +172,21 @@
       <p class="section-sub">Buy it once. It's yours.</p>
       <div class="price-box">
         <div class="price">$14.99</div>
-        <div class="per">one-time purchase</div>
-        <!-- TODO: replace # with your Gumroad / Lemon Squeezy product link -->
-        <a class="btn btn-primary" href="#">Buy DriveTwin</a>
+        <div class="per">at launch · one-time purchase</div>
+
+        <!-- Pre-launch: collect emails via Netlify Forms (no charge yet).
+             AT LAUNCH — swap this whole <form> for the Gumroad overlay button:
+               <a class="btn btn-primary gumroad-button" href="https://driftwoodapps.gumroad.com/l/vswaub">Buy DriveTwin — $14.99</a>
+             …and add the overlay script once in <head>:
+               <script src="https://gumroad.com/js/gumroad.js"></script> -->
+        <form class="notify-form" name="launch-notify" method="POST"
+              data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="launch-notify">
+          <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+          <input type="email" name="email" required placeholder="you@example.com" aria-label="Your email address">
+          <button type="submit" class="btn btn-primary">Notify me at launch</button>
+        </form>
+        <p class="notify-note">Pay nothing today — we'll email you the moment DriveTwin ships.</p>
         <ul>
           <li>Full two-way sync engine</li>
           <li>All future 1.x updates</li>

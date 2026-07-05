@@ -191,6 +191,14 @@ details p { color: var(--text-soft); margin-top: 12px; max-width: 720px; }
 }
 .price-box .price { font-size: 56px; font-weight: 700; letter-spacing: -0.03em; }
 .price-box .per { color: var(--text-soft); font-size: 15px; margin-bottom: 24px; }
+.notify-form { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.notify-form input[type="email"] {
+  flex: 1 1 200px; min-width: 0; max-width: 260px;
+  padding: 11px 14px; font-size: 15px; border-radius: 980px;
+  border: 1px solid var(--border); background: var(--bg-soft); color: var(--text);
+}
+.notify-form .btn { flex: 0 0 auto; }
+.notify-note { color: var(--text-soft); font-size: 13px; margin-top: 12px; }
 .price-box ul {
   list-style: none; text-align: left; margin: 26px auto 0; max-width: 300px;
   color: var(--text-soft); font-size: 15px;
