@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to store an external drive in iCloud without filling up your Mac</title>
+  <meta name="description" content="iCloud Drive keeps downloading your whole external drive onto your Mac and filling the disk. Here's why it happens, why the usual fixes don't work, and how to mirror a drive to iCloud without running out of space.">
+  <link rel="canonical" href="https://driftwoodapps.com/guide/external-drive-icloud/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#3C6E82">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg class="brandmark" viewBox="0 0 100 100" width="26" height="26" aria-hidden="true">
+          <defs><linearGradient id="navpeb" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8FBCC9"/><stop offset="1" stop-color="#3C6E82"/></linearGradient></defs>
+          <rect width="100" height="100" rx="26" fill="url(#navpeb)"/>
+          <ellipse cx="50" cy="63" rx="17" ry="8" fill="#fff"/>
+          <ellipse cx="50" cy="50" rx="12.5" ry="7" fill="#fff"/>
+          <ellipse cx="50" cy="39" rx="8.5" ry="6" fill="#fff"/>
+        </svg>
+        <span>Driftwood&nbsp;Apps</span>
+      </a>
+      <div class="links">
+        <a href="/drivetwin/">DriveTwin</a>
+        <a href="/drivetwin/#pricing">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="wrap" style="max-width: 720px; padding-top: 56px; padding-bottom: 40px;">
+    <h1 style="font-size: clamp(30px, 5vw, 46px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;">
+      How to store an external drive in iCloud without filling up your Mac
+    </h1>
+    <p style="font-size: 19px; color: var(--text-soft); margin-top: 18px;">
+      If you've tried to move a full external drive into iCloud Drive, you've probably hit the same wall:
+      macOS starts copying <em>everything</em> onto your Mac first, and within minutes you see
+      <strong>“Your disk is almost full.”</strong> Here's why iCloud does this, why the common workarounds fail,
+      and how to mirror a drive to iCloud that's far larger than your Mac's storage.
+    </p>
+
+    <h2 style="margin-top: 40px;">Why iCloud Drive fills up your Mac</h2>
+    <p style="color: var(--text-soft);">
+      iCloud Drive was designed to sync a folder, not to archive a big external disk. When you drag a large folder
+      into iCloud Drive, macOS has to <strong>stage every file locally</strong> before it can upload it to the cloud.
+      On a Mac with 256&nbsp;GB or 512&nbsp;GB of storage, a 1&nbsp;TB external drive simply won't fit — the local copy
+      fills your startup disk long before the upload finishes. Even with <em>Optimize Mac Storage</em> turned on,
+      macOS still needs room to stage files on their way up, and it can't evict them fast enough to keep pace.
+    </p>
+
+    <h2 style="margin-top: 36px;">The workarounds that don't actually work</h2>
+    <ul style="color: var(--text-soft); line-height: 1.9;">
+      <li><strong>Dragging the folder into iCloud Drive.</strong> This is what triggers the "disk full" error in the first place.</li>
+      <li><strong>rsync or shell scripts.</strong> They copy files faster than iCloud can upload and evict them, so the local disk fills and the copy dies with <em>"No space left on device."</em></li>
+      <li><strong>Optimize Mac Storage.</strong> It helps once files are <em>in</em> iCloud, but it doesn't solve the staging bottleneck during the initial upload.</li>
+      <li><strong>Turning the drive into an iCloud Drive folder.</strong> iCloud isn't built to point at an external volume, and it still wants to download everything back down.</li>
+    </ul>
+
+    <h2 style="margin-top: 36px;">The fix: trickle the files up and clear space as you go</h2>
+    <p style="color: var(--text-soft);">
+      The trick is to move files through the bottleneck a few at a time — upload a file, wait for iCloud to confirm it's
+      safely in the cloud, then <strong>evict the local copy</strong> to free the space before moving to the next one.
+      Done manually this is tedious and error-prone. That's exactly the job we built
+      <a href="/drivetwin/">DriveTwin</a> to do automatically.
+    </p>
+    <div style="max-width: 430px; margin: 28px auto;">
+      <img src="/screenshots/drivetwin-demo.gif"
+           alt="DriveTwin mirroring an external drive to iCloud: choose folders, review the plan, sync, verify."
+           style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 14px 34px rgba(0,0,0,0.13); display: block;">
+    </div>
+    <p style="color: var(--text-soft);">
+      DriveTwin keeps an external-drive folder and an iCloud Drive folder in a full <strong>two-way mirror</strong>.
+      It uploads files, confirms each one landed in iCloud, and releases the local copy — so hundreds of gigabytes
+      end up safe in the cloud while your Mac's disk stays free. It watches your free space the whole time and pauses
+      if it ever runs low, so you never see "disk full" again. Files stay downloadable from iCloud on demand.
+    </p>
+
+    <h2 style="margin-top: 36px;">What makes it safe</h2>
+    <ul style="color: var(--text-soft); line-height: 1.9;">
+      <li><strong>Preview before anything changes.</strong> Every sync shows exactly what it will upload, download, or remove — you confirm first.</li>
+      <li><strong>Deletions go to the Trash</strong>, and deletion-syncing is off by default, so nothing disappears by surprise.</li>
+      <li><strong>Newer version wins</strong> on conflicts, and an edit always beats a delete — your work is never silently overwritten.</li>
+      <li><strong>Built-in verification</strong> confirms both sides match, every file.</li>
+    </ul>
+
+    <div style="background: var(--bg-soft); border-radius: 16px; padding: 28px; margin-top: 40px; text-align: center;">
+      <p style="font-size: 20px; font-weight: 600; margin-bottom: 6px;">Mirror your external drive to iCloud — without filling your Mac.</p>
+      <p style="color: var(--text-soft); margin-bottom: 20px;">DriveTwin for macOS · $14.99 one-time · no subscription</p>
+      <a class="btn btn-primary" href="/drivetwin/">Get DriveTwin</a>
+    </div>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Driftwood Apps. Not affiliated with or endorsed by Apple Inc. iCloud is a trademark of Apple Inc.</span>
+      <span><a href="/drivetwin/">DriveTwin</a> · <a href="mailto:hello@driftwoodapps.com">Contact</a></span>
+    </div>
+  </footer>
+
+</body>
+</html>
