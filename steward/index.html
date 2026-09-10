@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steward Records — Support</title>
-  <meta name="description" content="Support for Steward Records: keep the documents about the things you own, and get answers with the passage each answer came from.">
+  <title>Steward Records — Your things, on the record</title>
+  <meta name="description" content="Steward keeps the documents about the things you own and gets you answers you can check against the page they came from. Scan an invoice, track what is due, and know before a warranty lapses. Free on the App Store.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#3C6E82">
+  <meta name="theme-color" content="#12967e">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Phone screenshots are tall; the shared gallery is built for wide Mac
+       shots. Four across on desktop, two on a phone. */
+    .phones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+              max-width: 940px; margin: 0 auto; }
+    @media (max-width: 820px) { .phones { grid-template-columns: repeat(2, 1fr); } }
+    .phones figure { margin: 0; }
+    .phones img { width: 100%; height: auto; display: block; border-radius: 14px;
+                  border: 1px solid var(--border); }
+    .phones figcaption { text-align: center; color: var(--text-soft);
+                         font-size: 13px; margin-top: 10px; }
+    .badge-row { display: flex; gap: 16px; align-items: center;
+                 justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .badge-row img { height: 52px; width: auto; display: block; }
+    .req { color: var(--text-soft); font-size: 14px; margin-top: 14px; text-align: center; }
+  </style>
 </head>
 <body>
 
@@ -29,79 +45,114 @@
         <span>Driftwood&nbsp;Apps</span>
       </a>
       <div class="links">
+        <a href="#what">What it does</a>
+        <a href="#privacy">Privacy</a>
+        <a href="/steward/support/">Support</a>
         <a href="/drivetwin/">DriveTwin</a>
-        <a href="/steward/privacy/">Privacy</a>
-        <a href="mailto:help@driftwoodapps.com">Contact</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <h1>Steward&nbsp;Records<br><span class="grad">Support.</span></h1>
-    <p class="sub">Keep the documents about the things you own, and get answers
-       you can check against the page they came from.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:help@driftwoodapps.com">Email support</a>
+    <h1>Your things,<br><span class="grad">on the record.</span></h1>
+    <p class="sub">Steward keeps the documents about the things you own — and gets you
+       answers you can check against the page they came from.</p>
+    <div class="badge-row">
+      <a href="https://apps.apple.com/us/app/steward-records/id6804546716">
+        <img src="/assets/app-store-badge.svg" alt="Download Steward Records on the App Store">
+      </a>
     </div>
+    <p class="req">Free. iPhone and iPad, <strong>requires iOS 26 or later</strong>. No account, no subscription.</p>
   </header>
 
-  <section>
-    <div class="wrap" style="max-width: 760px;">
-      <h2 class="section-title">Getting help</h2>
-      <p class="section-sub">One person reads this address, and replies.</p>
+  <section id="what">
+    <div class="wrap">
+      <h2 class="section-title">What it does</h2>
+      <p class="section-sub">Paperwork in, a maintenance record out.</p>
 
-      <div class="card">
-        <span class="icon">✉️</span>
-        <h3>help@driftwoodapps.com</h3>
-        <p>Tell us what you expected and what happened instead. If something looked
-           wrong on screen, a screenshot settles it faster than a paragraph.</p>
-      </div>
-
-      <h2 class="section-title" style="margin-top: 48px;">Common questions</h2>
-
-      <div class="grid cols-2" style="margin-top: 22px;">
+      <div class="grid cols-2" style="max-width: 940px; margin: 0 auto;">
         <div class="card">
-          <h3>Where are my documents stored?</h3>
-          <p>On your device, and in your own private iCloud database if you are signed
-             in to iCloud. There is no Steward server. We cannot see them.</p>
+          <span class="icon">🔍</span>
+          <h3>Everything is evidence-backed</h3>
+          <p>Every proposed event shows the document's own words beside it, and every
+             answer names the page it came from. If a claim isn't supported by a
+             passage you can read, you'll see that before you accept it.</p>
         </div>
         <div class="card">
-          <h3>Why is my other device not showing a change?</h3>
-          <p>Sync runs through your iCloud account. Check that both devices are signed
-             in to the same account and have a connection. Settings → Recent Activity
-             reports the last upload and download, and any error, unparaphrased.</p>
+          <span class="icon">📷</span>
+          <h3>No scanner needed</h3>
+          <p>Point the camera at a paper invoice. Steward straightens the page, reads
+             the text, and files it with the thing it belongs to. Photos and files
+             import the same way.</p>
         </div>
         <div class="card">
-          <h3>Does anything get sent to an AI?</h3>
-          <p>Not unless you turn it on. Steward reads documents on your device by
-             default. Sending a question to Claude requires your own Anthropic API key
-             and your explicit consent, and can be switched off by removing the key.</p>
+          <span class="icon">🔔</span>
+          <h3>Maintenance that arrives on time</h3>
+          <p>Set a service interval and Steward tracks what's due, reminds you the
+             morning it is, and records the work when you mark it done. See it as a
+             list or a month at a glance.</p>
         </div>
         <div class="card">
-          <h3>A reminder did not arrive.</h3>
-          <p>Reminders fire at 9am on the due day, and a date already past will not
-             schedule one. Settings → Recent Activity shows the permission state and
-             exactly what is scheduled.</p>
-        </div>
-        <div class="card">
-          <h3>The scan came out unreadable.</h3>
-          <p>Open the document and switch to “Text read” to see what was recognised.
-             A photograph of a page in good light beats a screenshot of one, and a
-             stamped metal plate is the hardest case there is.</p>
-        </div>
-        <div class="card">
-          <h3>How do I delete a document?</h3>
-          <p>Swipe it in the documents list. You can remove it from one subject or
-             delete it everywhere; the app tells you what each choice costs before
-             you confirm.</p>
+          <span class="icon">🛡️</span>
+          <h3>Warranties, before they lapse</h3>
+          <p>Give a component its expiry date and Steward warns you a month ahead —
+             while there is still time to book a repair somebody else pays for.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h2 class="section-title" style="margin-top: 48px;">Privacy</h2>
+  <section class="soft">
+    <div class="wrap">
+      <h2 class="section-title">A look inside</h2>
+      <p class="section-sub">A house, its components, and what needs doing.</p>
+
+      <div class="phones">
+        <figure>
+          <img src="/screenshots/steward-01-home.png" alt="Steward's home screen listing subjects and scheduled work.">
+          <figcaption>Everything you maintain</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/steward-02-due.png" alt="The Due screen, showing overdue, due-soon and upcoming work.">
+          <figcaption>What's due, and when</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/steward-03-calendar.png" alt="A month view of upcoming maintenance.">
+          <figcaption>A month at a glance</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/steward-05-timeline.png" alt="A subject's history of work done, with costs and the documents behind it.">
+          <figcaption>What was done, and what it cost</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap" style="max-width: 760px; text-align: center;">
+      <h2 class="section-title">Private by default</h2>
       <p style="color: var(--text-soft); font-size: 18px;">
-        Steward has no accounts and no servers. The full policy is
-        <a href="/steward/privacy/">here</a>.
+        Your documents stay on your devices and sync through your own iCloud account.
+        There is no Steward server and no account to create. Answers are written
+        on-device where your hardware supports it; sending a question to Claude
+        instead is opt-in, uses your own API key, and is never switched on for you.
       </p>
+      <p style="margin-top: 18px;">
+        <a href="/steward/privacy/">Read the privacy policy</a> ·
+        <a href="/steward/support/">Support and common questions</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap" style="max-width: 640px; text-align: center;">
+      <h2 class="section-title">Get Steward</h2>
+      <div class="badge-row">
+        <a href="https://apps.apple.com/us/app/steward-records/id6804546716">
+          <img src="/assets/app-store-badge.svg" alt="Download Steward Records on the App Store">
+        </a>
+      </div>
+      <p class="req">Free. Requires iOS 26 or later.</p>
     </div>
   </section>
 
@@ -109,6 +160,7 @@
     <div class="wrap">
       <span>© 2026 Driftwood Apps. All rights reserved.</span>
       <span>
+        <a href="/steward/support/">Support</a> ·
         <a href="/steward/privacy/">Privacy</a> ·
         <a href="/drivetwin/">DriveTwin</a> ·
         <a href="mailto:help@driftwoodapps.com">help@driftwoodapps.com</a>

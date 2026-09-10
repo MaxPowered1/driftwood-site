@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steward Records — Support</title>
+  <meta name="description" content="Support for Steward Records: keep the documents about the things you own, and get answers with the passage each answer came from.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3C6E82">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="/">
+        <svg class="brandmark" viewBox="0 0 100 100" width="26" height="26" aria-hidden="true">
+          <defs><linearGradient id="navpeb" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8FBCC9"/><stop offset="1" stop-color="#3C6E82"/></linearGradient></defs>
+          <rect width="100" height="100" rx="26" fill="url(#navpeb)"/>
+          <ellipse cx="50" cy="63" rx="17" ry="8" fill="#fff"/>
+          <ellipse cx="50" cy="50" rx="12.5" ry="7" fill="#fff"/>
+          <ellipse cx="50" cy="39" rx="8.5" ry="6" fill="#fff"/>
+        </svg>
+        <span>Driftwood&nbsp;Apps</span>
+      </a>
+      <div class="links">
+        <a href="/steward/">Steward</a>
+        <a href="/steward/privacy/">Privacy</a>
+        <a href="/drivetwin/">DriveTwin</a>
+        <a href="mailto:help@driftwoodapps.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Steward&nbsp;Records<br><span class="grad">Support.</span></h1>
+    <p class="sub">Keep the documents about the things you own, and get answers
+       you can check against the page they came from.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:help@driftwoodapps.com">Email support</a>
+      <a class="btn btn-secondary" href="/steward/">About Steward</a>
+    </div>
+    <p style="color: var(--text-soft); font-size: 14px; margin-top: 18px;">
+      Steward requires iOS 26 or later.
+    </p>
+  </header>
+
+  <section>
+    <div class="wrap" style="max-width: 760px;">
+      <h2 class="section-title">Getting help</h2>
+      <p class="section-sub">One person reads this address, and replies.</p>
+
+      <div class="card">
+        <span class="icon">✉️</span>
+        <h3>help@driftwoodapps.com</h3>
+        <p>Tell us what you expected and what happened instead. If something looked
+           wrong on screen, a screenshot settles it faster than a paragraph.</p>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 48px;">Common questions</h2>
+
+      <div class="grid cols-2" style="margin-top: 22px;">
+        <div class="card">
+          <h3>Where are my documents stored?</h3>
+          <p>On your device, and in your own private iCloud database if you are signed
+             in to iCloud. There is no Steward server. We cannot see them.</p>
+        </div>
+        <div class="card">
+          <h3>Why is my other device not showing a change?</h3>
+          <p>Sync runs through your iCloud account. Check that both devices are signed
+             in to the same account and have a connection. Settings → Recent Activity
+             reports the last upload and download, and any error, unparaphrased.</p>
+        </div>
+        <div class="card">
+          <h3>Does anything get sent to an AI?</h3>
+          <p>Not unless you turn it on. Steward reads documents on your device by
+             default. Sending a question to Claude requires your own Anthropic API key
+             and your explicit consent, and can be switched off by removing the key.</p>
+        </div>
+        <div class="card">
+          <h3>A reminder did not arrive.</h3>
+          <p>Reminders fire at 9am on the due day, and a date already past will not
+             schedule one. Settings → Recent Activity shows the permission state and
+             exactly what is scheduled.</p>
+        </div>
+        <div class="card">
+          <h3>The scan came out unreadable.</h3>
+          <p>Open the document and switch to “Text read” to see what was recognised.
+             A photograph of a page in good light beats a screenshot of one, and a
+             stamped metal plate is the hardest case there is.</p>
+        </div>
+        <div class="card">
+          <h3>How do I delete a document?</h3>
+          <p>Swipe it in the documents list. You can remove it from one subject or
+             delete it everywhere; the app tells you what each choice costs before
+             you confirm.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top: 48px;">Privacy</h2>
+      <p style="color: var(--text-soft); font-size: 18px;">
+        Steward has no accounts and no servers. The full policy is
+        <a href="/steward/privacy/">here</a>.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Driftwood Apps. All rights reserved.</span>
+      <span>
+        <a href="/steward/privacy/">Privacy</a> ·
+        <a href="/drivetwin/">DriveTwin</a> ·
+        <a href="mailto:help@driftwoodapps.com">help@driftwoodapps.com</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
