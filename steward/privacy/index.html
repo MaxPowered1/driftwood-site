@@ -18,6 +18,7 @@
        back, or the clauses run into one another. */
     .policy p { color: var(--text-soft); font-size: 17px; line-height: 1.75; margin: 0 0 18px; }
     .policy h2 { margin-top: 36px; margin-bottom: 10px; }
+    .policy h3 { margin-top: 26px; margin-bottom: 8px; font-size: 18px; }
     .policy ul { margin: 0 0 18px; padding-left: 22px; }
     .policy a { text-decoration: underline; }
   </style>
@@ -50,7 +51,7 @@
     <div class="wrap policy" style="max-width: 720px;">
       <h1 style="font-size: 40px; letter-spacing: -0.02em; margin-bottom: 6px;">Privacy Policy</h1>
       <p class="section-sub" style="text-align: left; margin-bottom: 40px;">
-        Steward Records · Last updated 5 September 2026
+        Steward Records · Last updated 21 November 2026
       </p>
 
       <p>Steward Records (“Steward”) is a personal record-keeping app. This policy
@@ -67,18 +68,37 @@
          they sync between your own devices through your private iCloud database,
          which is governed by Apple’s privacy policy and is not accessible to us.</p>
 
-      <h2 class="section-title" style="text-align: left; font-size: 22px;">Optional: sending questions to Claude</h2>
-      <p>Steward can answer questions about your documents. Where your device supports
-         it, this happens entirely on-device.</p>
-      <p>You may instead choose to use Anthropic’s Claude by supplying your own
-         Anthropic API key. This is <strong>off by default</strong> and requires you to
-         enter a key and give explicit consent. When it is on and you ask a question or
-         ask a document to be read, the relevant text from that document and your
-         question are sent to Anthropic’s API. That text is subject to Anthropic’s own
-         policies. Steward keeps no copy and sends nothing else — no name, no account,
-         no device identifier.</p>
+      <h2 class="section-title" style="text-align: left; font-size: 22px;">Optional: having a document read somewhere other than your device</h2>
+      <p>Steward can answer questions about your documents. By default this happens on
+         your device, and nothing is sent anywhere.</p>
+      <p>Some documents are longer than the model on your device can read. For those,
+         Steward offers two choices, <strong>both off until you switch them on</strong>,
+         each behind its own consent screen. Neither is needed to use the app.</p>
+
+      <h3>Apple’s private cloud</h3>
+      <p>On iOS 27 and later, you may turn on <strong>Apple’s Private Cloud Compute</strong>.
+         When it is on and you ask a question, your question and the relevant text — which
+         for a question about one document may be the whole of that document’s text — are
+         sent to Apple to be read. That text is handled by Apple under Apple’s own terms
+         and privacy policy; it is not sent to us, and we never see it. Steward keeps no
+         copy, and sends nothing else: no name, no account, no device identifier.</p>
+      <p>Deciding what a document <em>is</em> never uses this. That runs on your device.</p>
+      <p>You can turn it off at any time in Settings, which stops it entirely. The
+         setting is per device and is not synced.</p>
+
+      <h3>Anthropic’s Claude</h3>
+      <p>You may instead supply your own Anthropic API key. This is
+         <strong>off by default</strong> and requires you to enter a key and give explicit
+         consent. When it is on and you ask a question or ask a document to be read, the
+         relevant text from that document and your question are sent to Anthropic’s API.
+         That text is subject to Anthropic’s own policies. Steward keeps no copy and
+         sends nothing else — no name, no account, no device identifier.</p>
       <p>You can remove your API key at any time in Settings, which stops this
          entirely.</p>
+
+      <h3>Turning both off</h3>
+      <p>Setting Steward to <strong>never leave this device</strong> switches both off at
+         once.</p>
 
       <h2 class="section-title" style="text-align: left; font-size: 22px;">What we do not do</h2>
       <ul style="color: var(--text-soft); line-height: 1.8;">
